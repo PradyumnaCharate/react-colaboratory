@@ -1,0 +1,13 @@
+.action-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*when user hovers then only opacity will increase..till then button will not be that visible and 
+  transition will be in 0.3 sec*/
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.action-bar:hover {
+  opacity: 1;
+}

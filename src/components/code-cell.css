@@ -1,0 +1,31 @@
+.progress-wrapper {
+  height: 100%;
+  flex-grow: 1;
+  background-color: white;
+}
+
+.progress-cover {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  /*run this animation for 0.5 seconds.when animation starts opacity will be 0 upto 50% of time and after
+  0.250 seconds it will have opacity will be 1 so if code is fastly bundled bar will not be shown
+  if bundling takes more time than 0.250 seconds progress bar will have opacity will have 1 and it will 
+  be shown*/
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

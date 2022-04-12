@@ -1,0 +1,39 @@
+.add-cell {
+  position: relative;
+  opacity: 0;
+  /*whenever we state transition default transition is linear transition but that is too anoying and 
+  flashy in our notebook so we are defining transition as ease in and 0.1 is delay to transition*/
+  transition: opacity 0.3s ease-in 0.1s;
+  /*8px to top and bottom and 0 to left and right*/
+  margin: 8px 0;
+}
+
+.add-cell:hover {
+  opacity: 1;
+}
+
+.add-cell.force-visible {
+  opacity: 1;
+}
+
+/*absolute position will ensure divider line to be rendeeered behind two buttons and not through them
+border bottom will draw horizontal line and z index will hide line when buttons come*/
+.add-cell .divider {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+  right: 2.5%;
+  left: 2.5%;
+  border-bottom: 1px solid gray;
+  width: 95%;
+  z-index: -1;
+}
+/*this will render buttons at center */
+.add-cell .add-buttons {
+  display: flex;
+  justify-content: center;
+}
+/*this will find button tag and add 0 px on top and bottom and 20 px on left and right*/
+.add-cell .add-buttons button {
+  margin: 0 20px;
+}

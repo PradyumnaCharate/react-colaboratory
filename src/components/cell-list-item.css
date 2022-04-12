@@ -1,0 +1,14 @@
+/* giving position relative so that cell action bars dont stack on each other
+but action bar will be hidden under code cell or editor cell so it will not be visible
+we can add z-index:10 then  it will get upward into action-bar or otherwise we can 
+add action bar after child element in cell-list-item so that it will have priority to be rendered on top*/
+.cell-list-item {
+  position: relative;
+}
+
+/*grey bar on top of code cell with action bar*/
+.action-bar-wrapper {
+  height: 30px;
+  width: 100%;
+  background-color: #37414b;
+}

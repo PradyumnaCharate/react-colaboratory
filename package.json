@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "@monaco-editor/react": "3.7.4",
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.2",
@@ -19,6 +20,7 @@
     "axios": "0.21.1",
     "bulmaswatch": "^0.8.1",
     "esbuild-wasm": "0.8.27",
+    "immer": "9.0.12",
     "jscodeshift": "0.11.0",
     "localforage": "^1.9.0",
     "monaco-editor": "0.21.2",
