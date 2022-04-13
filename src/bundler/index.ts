@@ -27,6 +27,10 @@ const bundle = async (rawCode: string) => {
           'process.env.NODE_ENV': '"production"',
           global: 'window',
         },
+        //here we are overriding default jsx buiilder ...we will call _React.createElement instead
+        //of default React.createElement because o fnaming collision issue
+        jsxFactory: '_React.createElement',
+      jsxFragment: '_React.Fragment',
       });
       //bundled code is present in array's first element text field
       return {

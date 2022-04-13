@@ -1,0 +1,9 @@
+.cell-list {
+  /*0 px margin to top and bottom and 25 px margin to left and right*/
+  margin: 0 25px 50vh;
+}
+
+/*last cell will have botom margin of full view height*/
+.react-draggable-transparent-selection .cell-list {
+  margin-bottom: 100vh;
+}

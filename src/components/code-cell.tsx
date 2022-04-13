@@ -6,6 +6,7 @@ import Resizable from './resizable';
 import { Cell } from '../redux';
 import { useActions } from '../hooks/use-actions';
 import { useTypedSelector } from '../hooks/use-typed-selector';
+import { useCumulativeCode } from '../hooks/use-cumulative-code';
 
 //previously we were not taking cell as argument but now to update only that specific cell out of 
 //all cells we are taking specific cell as argument
@@ -24,20 +25,21 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
   //setInput will be replaced by updateCell(cell.id)
   //bundle has bundle.code and bundle.error and bundle.loading
   const bundle = useTypedSelector((state) => state.bundles && state.bundles[cell.id]);
+  const cumulativeCode = useCumulativeCode(cell.id);
 
   useEffect(() => {
     //if bundle is not there immediately bundle the code(1st time app starts up)
     if (!bundle) {
       // create bundle is action creator taking cell.id and cell.content and it will bundle the code 
 
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCode);
       return;
     }
     //set timeout when user changes input in code editor for 1 second and then automatically bundle
     //the code and
     //save this setTimeout to timer which is reference to that function's return object 
     const timer = setTimeout(async () => {
-      createBundle(cell.id, cell.content);
+      createBundle(cell.id, cumulativeCode);
     }, 1000);
     //if you return function inside useEffect then it will be called automaticalluy whenever 
     //useeffect is called. this is inbuild feature.
